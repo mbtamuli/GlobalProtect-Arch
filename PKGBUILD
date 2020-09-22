@@ -25,13 +25,15 @@ package() {
 	install -Dm755 "${srcdir}/libwalocal.so.4.3.1055.0" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
 	install -Dm755 "${srcdir}/libwaresource.so" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
 	install -Dm755 "${srcdir}/libwautils.so.4.3.1055.0" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
-	install -Dm755 "${srcdir}/libwaapi.so" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
-	install -Dm755 "${srcdir}/libwaapi.so.4" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
-	install -Dm755 "${srcdir}/libwaheap.so" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
-	install -Dm755 "${srcdir}/libwalocal.so" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
-	install -Dm755 "${srcdir}/libwalocal.so.4" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
-	install -Dm755 "${srcdir}/libwautils.so" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
-	install -Dm755 "${srcdir}/libwautils.so.4" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
+
+	cd "${pkgdir}/opt/paloaltonetworks/globalprotect"
+	ln -s "libwaapi.so.4.3.1055.0" "libwaapi.so"
+	ln -s "libwaapi.so.4.3.1055.0" "libwaapi.so.4"
+	ln -s "libwaheap.so.4" "libwaheap.so"
+	ln -s "libwalocal.so.4.3.1055.0" "libwalocal.so"
+	ln -s "libwalocal.so.4.3.1055.0" "libwalocal.so.4"
+	ln -s "libwautils.so.4.3.1055.0" "libwautils.so"
+	ln -s "libwautils.so.4.3.1055.0" "libwautils.so.4"
 
 	install -Dm644 "${srcdir}/license.cfg" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
 	install -Dm755 "${srcdir}/pre_exec_gps.sh" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
@@ -45,5 +47,5 @@ package() {
 	install -Dm644 "${srcdir}/globalprotect.1.gz" "${pkgdir}/usr/share/man/man1/"
 
 	install -dm755 "${pkgdir}/usr/local/bin/"
-	ln -s "${srcdir}/globalprotect" "${pkgdir}/usr/local/bin/globalprotect"
+	ln -s "/opt/paloaltonetworks/globalprotect/globalprotect" "${pkgdir}/usr/local/bin/globalprotect"
 }
