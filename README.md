@@ -8,8 +8,9 @@ My first attempt at building a package for Arch Linux.
 2. Clone this repository and change directory into the repository.
 3. Fetch and place the source package you got from GlobalProtect. It will have the filename like `PanGPLinux-5.1.4-c9.tgz`.
 4. Run `makepkg -si`
+5. Profit! :fire:
 
-**Note:** If version changed, you'll need to change the `pkgver` and `sha256sums` fields
+**:memo: Note:** If version changed, you'll need to change the `pkgver` and `sha256sums` fields
 
 ```bash
 sudo pacman -S base-devel
