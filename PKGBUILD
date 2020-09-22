@@ -17,6 +17,7 @@ package() {
 
 	install -Dm755 "${srcdir}/globalprotect" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
 	install -Dm755 "${srcdir}/PanGPA" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
+	install -Dm755 "${srcdir}/PanGPS" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
 	install -Dm755 "${srcdir}/PanGpHip" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
 	install -Dm755 "${srcdir}/PanGpHipMp" "${pkgdir}/opt/paloaltonetworks/globalprotect/"
 
