@@ -1,0 +1,22 @@
+post_install() {
+    echo "
+### NOTE:
+
+You need to start/enable the service 'gpd'.
+You also need to put the following part in your .bashrc/.zshrc
+
+function gpa() {
+  PANGPA=/opt/paloaltonetworks/globalprotect/PanGPA
+
+  pgrep -u \$USER PanGPA > /dev/null 2>&1
+
+  if [ \$? -ne 0 ]; then
+    if [ -f \$PANGPA ]; then
+      ( \$PANGPA start & )
+    fi
+  fi
+}
+
+Then run 'gpa' before running 'globalprotect'.
+"
+}
